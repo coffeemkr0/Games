@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2737a654-93e6-4553-b548-01486a94db49" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/SurvivalInstanceService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LegendsOfKesmaiSurvival.Services.Zombies.wsdl" MetadataType="Wsdl" ID="5f1b09e7-870f-41f3-a215-d74cdd9788f9" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SurvivalInstanceService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="9d85ae84-e8e6-4b1a-80b0-3f97617d6707" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SurvivalInstanceService/mex" />
+    <MetadataFile FileName="LegendsOfKesmaiSurvival.Services.Zombies.xsd" MetadataType="Schema" ID="3d40cb23-1e8d-4e1e-ab58-f46893be2174" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SurvivalInstanceService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="e6131996-df0d-442e-a183-ae343a79c951" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SurvivalInstanceService/mex" />
+    <MetadataFile FileName="LegendsOfKesmaiSurvival.Core.GameStateInformation.xsd" MetadataType="Schema" ID="4f6e630f-3c75-4cdc-8c15-ba6edf14d60d" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SurvivalInstanceService/mex" />
+    <MetadataFile FileName="System.Drawing.xsd" MetadataType="Schema" ID="0ebd4cd6-f71b-45af-b557-1d0d4e268708" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SurvivalInstanceService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="cfb321b1-90d8-4b9c-b01d-23d1800652cb" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SurvivalInstanceService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

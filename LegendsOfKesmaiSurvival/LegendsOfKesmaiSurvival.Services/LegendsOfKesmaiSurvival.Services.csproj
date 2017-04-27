@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53532F20-D59E-4BA5-BA4B-ADF4DDC1E870}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LegendsOfKesmaiSurvival.Services</RootNamespace>
+    <AssemblyName>LegendsOfKesmaiSurvival.Services</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdministrationCallbackHandler.cs" />
+    <Compile Include="Authentication\AuthenticationService.cs" />
+    <Compile Include="Authentication\AuthenticationCommunicationsStore.cs" />
+    <Compile Include="Authentication\IAuthenticationService.cs" />
+    <Compile Include="Authentication\IAuthenticationServiceCallback.cs" />
+    <Compile Include="Business\BusinessBase.cs" />
+    <Compile Include="Business\BusinessBaseList.cs" />
+    <Compile Include="Business\CharacterActions\CharacterAction.cs" />
+    <Compile Include="Business\CharacterActions\CharacterActionGroup.cs" />
+    <Compile Include="Business\CharacterActions\CharacterActionProcessor.cs" />
+    <Compile Include="Business\CharacterActions\CharacterActionTree.cs" />
+    <Compile Include="Business\CharacterActions\CharacterActionTypes.cs" />
+    <Compile Include="Business\Characters\Character.cs" />
+    <Compile Include="Business\Characters\NonPlayerCharacters\TownsPeople\Sheriff.cs" />
+    <Compile Include="Business\Items\Inventory.cs" />
+    <Compile Include="Business\Items\Item.cs" />
+    <Compile Include="Business\Maps\Map.cs" />
+    <Compile Include="Business\Maps\MapTile.cs" />
+    <Compile Include="Business\Maps\MapTileCollection.cs" />
+    <Compile Include="Business\Maps\MapNonPlayerCharacter.cs" />
+    <Compile Include="Business\Maps\MapObject.cs" />
+    <Compile Include="Business\Maps\Terrain.cs" />
+    <Compile Include="Business\Maps\TerrainPalette.cs" />
+    <Compile Include="Business\Maps\TypeConverters.cs" />
+    <Compile Include="Business\Characters\Faction\CharacterFaction.cs" />
+    <Compile Include="Business\Characters\NonPlayerCharacters\NonPlayerCharacter.cs" />
+    <Compile Include="Business\Characters\NonPlayerCharacters\NonPlayerCharacterTypes.cs" />
+    <Compile Include="Business\Characters\PlayerCharacters\PlayerCharacter.cs" />
+    <Compile Include="Business\SerializableDictionary.cs" />
+    <Compile Include="Business\UserAccount.cs" />
+    <Compile Include="Chat\ChatCommunicationsStore.cs" />
+    <Compile Include="Chat\ChatService.cs" />
+    <Compile Include="Chat\IChatService.cs" />
+    <Compile Include="Chat\IChatServiceCallback.cs" />
+    <Compile Include="DataAccesors\DataAccesoreBase.cs" />
+    <Compile Include="DataAccesors\UserDataAccessor.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\GameMap.cs" />
+    <Compile Include="Game\GameTile.cs" />
+    <Compile Include="Game\GameTileObject.cs" />
+    <Compile Include="Game\GameTileWall.cs" />
+    <Compile Include="Game\Level.cs" />
+    <Compile Include="Lobby\LobbyCommunicationsStore.cs" />
+    <Compile Include="Lobby\ILobbyService.cs" />
+    <Compile Include="Lobby\ILobbyServiceCallback.cs" />
+    <Compile Include="Lobby\LobbyService.cs" />
+    <Compile Include="MatchMaking\IMatchMakingService.cs" />
+    <Compile Include="MatchMaking\IMatchMakingServiceCallback.cs" />
+    <Compile Include="MatchMaking\MatchMakingCommunicationsStore.cs" />
+    <Compile Include="MatchMaking\MatchMakingService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ZombiesClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceHosting\ConsoleMessageTracer.cs" />
+    <Compile Include="ServiceHosting\ConsoleMessageTracing.cs" />
+    <Compile Include="ServiceHosting\NamedServiceHost.cs" />
+    <Compile Include="ServiceHosting\ServiceHostingManager.cs" />
+    <Compile Include="Utility\Global.cs" />
+    <Compile Include="Zombies\ClientInformation.cs" />
+    <Compile Include="Zombies\IAdministration.cs" />
+    <Compile Include="Zombies\IAdministrationCallback.cs" />
+    <Compile Include="Zombies\IGameplay.cs" />
+    <Compile Include="Zombies\IGameplayCallback.cs" />
+    <Compile Include="Zombies\ZombiesService.cs" />
+    <Compile Include="Zombies\ZombiesSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Service References\ZombiesClient\LegendsOfKesmaiSurvival.Core.GameStateInformation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZombiesClient\LegendsOfKesmaiSurvival.Services.Zombies.wsdl" />
+    <None Include="Service References\ZombiesClient\LegendsOfKesmaiSurvival.Services.Zombies.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZombiesClient\service.wsdl" />
+    <None Include="Service References\ZombiesClient\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LegendsOfKesmai.Data\LegendsOfKesmaiSurvivial.Data.csproj">
+      <Project>{858AF0BA-60B4-4D1B-9FC1-98B8F08581E1}</Project>
+      <Name>LegendsOfKesmaiSurvivial.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LegendsOfKesmaiSurvival.Content\LegendsOfKesmaiSurvival.Content.csproj">
+      <Project>{7B7CE8EF-2207-4B0B-9951-51E87CAE61AC}</Project>
+      <Name>LegendsOfKesmaiSurvival.Content</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LegendsOfKesmaiSurvival.Core\LegendsOfKesmaiSurvival.Core.csproj">
+      <Project>{00474FDD-53A0-4427-B977-7D601F11D18A}</Project>
+      <Name>LegendsOfKesmaiSurvival.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ZombiesClient\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZombiesClient\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZombiesClient\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZombiesClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

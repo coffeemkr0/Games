@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LegendsOfKesmaiSurvival.Core.GameStateInformation" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LegendsOfKesmaiSurvival.Core.GameStateInformation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfDirections">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Directions" type="tns:Directions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDirections" nillable="true" type="tns:ArrayOfDirections" />
+  <xs:simpleType name="Directions">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="North" />
+      <xs:enumeration value="South" />
+      <xs:enumeration value="East" />
+      <xs:enumeration value="West" />
+      <xs:enumeration value="NorthEast" />
+      <xs:enumeration value="NorthWest" />
+      <xs:enumeration value="SouthEast" />
+      <xs:enumeration value="SouthWest" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Directions" nillable="true" type="tns:Directions" />
+  <xs:complexType name="GameStateUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OtherPlayers" nillable="true" type="tns:OtherViewablePlayerInformation" />
+      <xs:element minOccurs="0" name="ViewableArea" nillable="true" type="tns:ArrayOfGameTile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameStateUpdate" nillable="true" type="tns:GameStateUpdate" />
+  <xs:complexType name="OtherViewablePlayerInformation">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="PlayerPositions" nillable="true" type="q1:ArrayOfPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OtherViewablePlayerInformation" nillable="true" type="tns:OtherViewablePlayerInformation" />
+  <xs:complexType name="ArrayOfGameTile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameTile" nillable="true" type="tns:GameTile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameTile" nillable="true" type="tns:ArrayOfGameTile" />
+  <xs:complexType name="GameTile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BackgroundImageName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DoorNames" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="Location" type="q3:Point" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObjectNames" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UnpassableObjectImageNames" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WallImageNames" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameTile" nillable="true" type="tns:GameTile" />
+</xs:schema>

@@ -1,0 +1,23 @@
+
+Need to look into handling the fault state on services.  
+Currently I think if anything causes an uncaught exception for the service then calls can no longer be made to it.
+For example if something causes an exception while someone is logging in, I think no one will be able to login until the server is restarted because
+the Authentication service is in a faulted state.
+
+
+Need to figure out if the whole Key thing on the WCF contracts.  Currently most of the methods require a Guid key from the client to make sure the client
+is actually allowed to be calling the method.  This is to help prevent someone from trying to just send commands to the server in any order they want without getting an
+authentication key from the server first (logging in etc.).
+Unfortunately passing a Guid key on every method the client needs to call is going to waste bandwidth.  This may not be an issue, but I would like to find a better
+way to do this if possible.  It is probably just my lack of experience with WCF.
+
+
+Need to make the Game State Updates more efficient maybe.  Right now when a game state update is sent to the client,
+it sends all of the hex data back for the viewable area.  If a new player comes into view, or an NPC comes into view etc., we shouldn't need to send all of that
+extra data about the hexes since they didn't change.
+Should also consider this when a player moves.  We don't need to re-send all of the hexes again.  
+Some new hexes will be added, some removed, and some will still be the same.
+
+
+Need to figure out how NPCs are going to encapsulate their logic and then raise game state updates when approriate.
+

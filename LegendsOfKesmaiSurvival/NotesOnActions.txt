@@ -1,0 +1,114 @@
+Actions:
+Some actions require a "turn" to execute, such as moving.  Once a player or NPC moves, they must wait a full turn to perform another action.
+However, some actions do not require a turn to execute and can be an instant action instead (looking at the ground or inspecting an item).
+
+Some future spells or buffs may not even require a turn to warm or cast.
+And yet even other actions may require a specified amount of time that has no relation to the time of a turn to execute such as channeling a spell for 5 seconds.
+
+Therefore, there really are no "turns" in the game, and the game is not turn based.  It is actually a real time game with time restrictions on actions.
+
+So instead of thinking of turns, we could say that a move action takes 3 seconds
+Or, we could say that an attack with a mace or sword takes 3 seconds.
+
+A better way of looking at it though would be to say that a player has a movement speed and weapons have an attack speed.
+
+Therefore, one player could have a movement speed of 3 (it takes 3 seconds to move), and another player could have a movement speed of 1.5 (it takes 1.5 seconds to move).
+A weapon could have an attack speed of 3 or 1.5 or anything other number and the same logic applies.
+
+Spells have a somewhat special consideration as an action depending on if the spell needs to be warmed or not before it is cast.  
+So, a spell could have a warming time and casting time that are independent.  
+Example:A Knight's heal spell has a warming time of 0 and a casting time of 3 while a Thaum's heal spell has a warming time of 3 and a casting time of 3.
+
+There may even be "instant" spells that have a warming and casting time of 0.  
+This same exception could even be applied to "special attacks", for example, a riposte attack that does not take any time away from the player performing other actions.
+
+This sort of backtracks us to a basic question though.  
+If the action takes 3 seconds to execute, is the action executed first and then the player has to wait for 3 seconds, or does the action occur after it takes 3 seconds to execute. 
+Or could it be either way?
+
+In LoK, all actions (that I know of) occur first and then it takes 3 seconds to recover.  
+This applies to moving, attacking with most weapons, warming a spell, casting a spell and using an item.
+
+When a player moves, they move instantly and then cannot do anything else for 3 seconds.  
+When a player attacks, they attack instantly and then cannot do anything else for 3 seconds.
+
+So, based on the logic of LoK, all actions occur instantly and then impose a time limit to keep the player from performing other actions.
+
+This leads to an immediate question:
+Does an action's "time" limit the player from executing any other actions, or only that same action, or perhaps it limits the same action and a list of other actions that are similar to it?
+This is venturing outside of the way LoK works but perhaps moving towards how some other games work today.
+For example melee attack time limits may be independent of spell time limits and both may be independent of movement (ouch).
+
+So, let's think this through:
+A player has a spell with a warming time of 0 and a casting time of 0.  
+Obviously we do not want the player to be able to spam a spell over and over with no time between each cast, so we need a third time limit property for spells.  
+We could call this the spell's cooldown time.
+
+A player has a weapon with an attack speed of 3.  
+What if we want the only limitation to be that the player can only swing the weapon every 3 seconds but not inhibit other actions after the swing?
+For example, the player could swing the sword a few times but then immediately move away after a swing.
+
+If we take the previous statements in mind, we end up with a player being able to cast a spell, swing their weapon and then move to another tile with no delays in between each action.
+
+The combination of these thoughts brings to mind another consideration : The global cooldown timer (WoW durh).
+
+The object of a global cooldown timer would be to impose a time limit in between the execution of successive actions of different types (spell, weapon attack, move).
+
+So, if we had a global cool down timer of say .5 seconds, it would then take the player 1 second to perform all three actions mentioned above.  Cast Spell, .5 seconds, attack, .5 seconds, move.
+
+There would of course then be another .5 seconds after the player moved before they could do anything else.
+
+This gets us where we need to be to be in line with LoK but with multiple ways to implement it to help us build a framework for new actions (I think).
+
+
+So, let's say we have actions that we do not want to apply to the global cool down timer (again WoW).  
+For example, the player has a Shove action that shoves a zombie off the tile every 15 seconds, and we want the player to be able to execute this action anytime it is not on its own cooldown.
+
+To accomplish this, our actions need another property that indicates if they are affected by the global cool down timer or not.
+
+
+And yet again, we are led to another consideration (I may just start repeating this sentence).
+If an action is not affected by the global cooldown timer, does it affect the cooldown of other actions?
+Does it restart the global cooldown timer?
+
+This leads us to the idea of actions being in groups.
+Perhaps spells are in one group of actions and then melee attacks are in another, and then finally movement is in a group by itself.
+These groups of actions need to be able to affect each other however in a limited way though, so we still need a global cool down.
+We could expand this even more and say that certain spells are in one group and other spells are in another.
+And then finally we could say that even though spells may be in different groups, these groups also exist in a group themselves.
+
+So, now we have a hierarchial structure of actions, and at the top we have a global cool down for all actions.
+Since each action has a flag that determines if it is affected by the global cool down, we can then apply limitations on indidual actions in groups based on the global cool down.
+
+However, what if we have two groups of spells and each group then has its own sort of global cool down timer within that group? (OMG make it stop).
+For example, what if we have a set of nature spells and a set of fire spells.
+A player can cast a nature spell and it starts a global cooldown timer for fire spells, but it does not start a global cooldown timer for nature spells.
+Therefore a player can cast a fire spell and then cast a nature spell without waiting for the global cool down timer of fire spells to expire.
+But we may still want to apply a global cool down timer to that scenario, so we still have the global cool down timer at the highest level to use if needed.
+
+And then there are groups of groups of spells.
+
+I'm sure you can see where this is going.
+We need a tree :)
+
+At the highest level of the tree exists the GLOBAL COOLDOWN TIME (all caps for dramatic effect of course).
+There are no actions at the highest level of the tree, it only contains groups of actions and the GLOBAL COOLDOWN TIME.
+
+Once we travel down the tree towards the next node, we will start encountering groups of actions and they may have other groups of actions and so on.
+
+Each group of actions in the tree will have its own Group Cooldown Time that acts as a global cool down time for all actions in that group, and also for all groups below it.
+
+Now we face a problem with the action only have one property called AffectedByGlobalCooldown.
+What does this property mean: the GLOBAL COOLDOWN TIME or its group's Global Cooldown Time, or does it mean its parent's Global Cooldown Time.
+
+
+To figure this out, we "could" have two properties, one for the GLOBAL COOLDOWN TIME and one for the Global Cooldown Time to get most of everything we want.
+Ideally, we would be able to traverse the tree in an upward direction to see at which point the action is affected by another cooldown, but the setup of this for an action could get too complicated to be worth it.
+
+So, for now we will just have the two flags for whether the action is affected by its group's cooldown time and for whether the action is affected by the overall global cooldown time.
+
+//TODO:Actions affecting the specific cooldown time of other actions in its group, its parent(s) group(s) or other groups.
+//Same for actions affecting the group cooldown time of other groups.
+
+
+

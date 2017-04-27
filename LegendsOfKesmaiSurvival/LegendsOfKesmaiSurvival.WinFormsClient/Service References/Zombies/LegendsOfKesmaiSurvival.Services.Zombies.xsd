@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="LegendsOfKesmaiSurvival.Services.Zombies" elementFormDefault="qualified" targetNamespace="LegendsOfKesmaiSurvival.Services.Zombies" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/LegendsOfKesmaiSurvival.Core.GameStateInformation" />
+  <xs:element name="Join">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="key" type="q1:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendChat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="key" type="q2:guid" />
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Move">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="key" type="q3:guid" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LegendsOfKesmaiSurvival.Core.GameStateInformation" minOccurs="0" name="movements" nillable="true" type="q4:ArrayOfDirections" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChatReceivedCallback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GameStateUpdatedCallback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LegendsOfKesmaiSurvival.Core.GameStateInformation" minOccurs="0" name="gameStateUpdate" nillable="true" type="q5:GameStateUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

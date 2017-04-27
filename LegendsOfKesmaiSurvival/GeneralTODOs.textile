@@ -1,0 +1,48 @@
+Painting walls needs to be different than painting a tile.  Walls should still be painted in some cases even if the tile is not visible since the wall itself might be what is blocking visibility.
+Finish converting the game service to use a game object instead of game state.
+
+Need to look into handling the fault state on services.  
+Currently I think if anything causes an uncaught exception for the service then calls can no longer be made to it.
+For example if something causes an exception while someone is logging in, I think no one will be able to login until the server is restarted because
+the Authentication service is in a faulted state.
+
+
+Need to figure out the whole Key thing on the WCF contracts.  Currently most of the methods require a Guid key from the client to make sure the client
+is actually allowed to be calling the method.  This is to help prevent someone from trying to just send commands to the server in any order they want without getting an
+authentication key from the server first (logging in etc.).
+Unfortunately passing a Guid key on every method the client needs to call is going to waste bandwidth.  This may not be an issue, but I would like to find a better
+way to do this if possible.  It is probably just my lack of experience with WCF.
+
+
+Need to make the Game State Updates more efficient maybe.  Right now when a game state update is sent to the client,
+it sends all of the tile data back for the viewable area.  If a new player comes into view, or an NPC comes into view etc., we shouldn't need to send all of that
+extra data about the tiles since they didn't change.
+Should also consider this when a player moves.  We don't need to re-send all of the tiles again.  
+Some new tiles will be added, some removed, and some will still be the same.
+
+Need to figure out how NPCs are going to encapsulate their logic and then raise game state updates when approriate.
+
+Need to figure out how to add animated items to the content assembly and then animate them in the client.  Examples - water tiles, fire, knight armor etc.
+
+The map editor needs some serious improvements to make it easier to make maps.  Mainly being able to multi-select tiles and edit their terrains would be a great feature.
+
+Need to add walls and objects to the map and update the game state update to pass this information.
+
+Need to put more consideration into the whole Content assembly.  It may not even be needed but it seemed like a good way to help separate
+images and sound files from the client.
+Backwards suggested using Ids instead of strings to cut down on bandwidth when the server sends a game state update to the client.
+
+The Map objects need to be more robust.  For example, it would be nice if a tile had a wall object with complex properties instead of a map tile
+just having a wall image file name.  The setback on this was trying to get the property grid control to bind to complex objects in the map editor.
+So, along with this, the map editor would have to be enhanced as well.
+What I would really like to see for this though is the ability to setup triggers and actions on the map and have generic code on the server to
+sort of execute these actions on generic triggers, kind of like map scripting.
+For example, let's say a map tile has a PlayerMovesTo trigger that gets fired when a player moves onto the tile.  Then there could be a corresponding
+ShowPlayerText action for the tile that would end up firing a server event to tell the game client to show some text to the user.
+This would be for something like you see in LoK when you move to tiles that show yellow text describing what you see.
+We could really expand on this and use it for things like zombies destroying objects, players destroying objects, things like that.
+Then the map designer would have a lot more control over designing a level or map without having to touch server code.
+
+
+
+

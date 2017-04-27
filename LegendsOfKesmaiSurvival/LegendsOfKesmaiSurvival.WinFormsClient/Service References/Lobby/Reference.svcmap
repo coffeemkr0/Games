@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="83e24ec4-f746-4066-b506-2b26eb20ce52" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/LegendsOfKesmaiSurvival.Services.Lobby/LobbyService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LegendsOfKesmaiSurvival.Services.Lobby.wsdl" MetadataType="Wsdl" ID="9d6b2d89-f5ab-4ee4-888a-d37fde1bc491" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/LegendsOfKesmaiSurvival.Services.Lobby/LobbyService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="820dfef3-f0a7-40c8-bf98-3d5929146873" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/LegendsOfKesmaiSurvival.Services.Lobby/LobbyService/mex" />
+    <MetadataFile FileName="LegendsOfKesmaiSurvival.Services.Lobby.xsd" MetadataType="Schema" ID="0980ecfd-e91d-4d1c-b476-d840284a8cd9" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/LegendsOfKesmaiSurvival.Services.Lobby/LobbyService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7eb3e5c2-85f6-4309-b8df-1f65576e1310" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/LegendsOfKesmaiSurvival.Services.Lobby/LobbyService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

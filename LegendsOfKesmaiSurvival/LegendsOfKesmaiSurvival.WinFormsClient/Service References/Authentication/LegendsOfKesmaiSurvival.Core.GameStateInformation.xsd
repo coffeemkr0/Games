@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LegendsOfKesmaiSurvival.Core.GameStateInformation" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LegendsOfKesmaiSurvival.Core.GameStateInformation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfServiceInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceInformation" nillable="true" type="tns:ServiceInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceInformation" nillable="true" type="tns:ArrayOfServiceInformation" />
+  <xs:complexType name="ServiceInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ServiceType" type="tns:ServiceInformation.ServiceTypes" />
+      <xs:element minOccurs="0" name="ServiceUri" nillable="true" type="xs:anyURI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceInformation" nillable="true" type="tns:ServiceInformation" />
+  <xs:simpleType name="ServiceInformation.ServiceTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Lobby" />
+      <xs:enumeration value="MatchMaking" />
+      <xs:enumeration value="Chat" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceInformation.ServiceTypes" nillable="true" type="tns:ServiceInformation.ServiceTypes" />
+</xs:schema>

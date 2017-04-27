@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B7CE8EF-2207-4B0B-9951-51E87CAE61AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LegendsOfKesmaiSurvival.Content</RootNamespace>
+    <AssemblyName>LegendsOfKesmaiSurvival.Content</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContentManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Annwn Town Special Tile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Bluish Marble Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Bog Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Burnt Stone Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Clear Water Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Cloud Lair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Cobbled Stone Road Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Compass %28Annwn Portal%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Compass %28Rift Portal%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Compass %28Shuk Portal%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Compass %28Torii Portal%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Compass Rose %28Axe%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Compass Rose %28Kesmai%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Compass Rose %28Oakvael%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Compass Rose %28Underkingdom%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Darkness Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Dirt Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Dock NS Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Down Stair %28WE%29 Portal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Dusty cave floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Earthen Pit Floor Portal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Fast Sand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Floor of Skulls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Granite Moss Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Gravel Road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Gray Tile Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Green Alfalfa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Green Slate Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Leng Drake Lair Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Leng Royal Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Log Floor EW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Mossy Cave Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Open Air Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Pit Floor Portal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Poison Water Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Reef Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Sandstone Cobblestones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Sandstone Slabs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Short Grass Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Shukumei Tile 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Shukumei Tile 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Stone FloorOverlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Tidal mud flats Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Tile Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Torii Tile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Torii Tile 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Torn up Cobblestones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Town Floor EW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_Town Floor NS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terrains\Terrain_White granite with rose colored viens.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Characters\Character_Fighter_Female_Green.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Female_Grey.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Female_Orange.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Female_Purple.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Female_Red.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Female_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Male_Blue.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Male_Brown.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Male_green.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Male_Purple.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Male_Red.png" />
+    <Content Include="Resources\Characters\Character_Fighter_Male_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Knight_Female_Green.png" />
+    <Content Include="Resources\Characters\Character_Knight_Female_Grey.png" />
+    <Content Include="Resources\Characters\Character_Knight_Female_Orange.png" />
+    <Content Include="Resources\Characters\Character_Knight_Female_Purple.png" />
+    <Content Include="Resources\Characters\Character_Knight_Female_Red.png" />
+    <Content Include="Resources\Characters\Character_Knight_Female_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Knight_Male_Green.png" />
+    <Content Include="Resources\Characters\Character_Knight_Male_Grey.png" />
+    <Content Include="Resources\Characters\Character_Knight_Male_Orange.png" />
+    <Content Include="Resources\Characters\Character_Knight_Male_Purple.png" />
+    <Content Include="Resources\Characters\Character_Knight_Male_Red.png" />
+    <Content Include="Resources\Characters\Character_Knight_Male_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Female_Green.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Female_Grey.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Female_Orange.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Female_Purpe.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Female_Red.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Female_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Male_Green.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Male_Grey.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Male_Orange.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Male_Purple.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Male_Red.png" />
+    <Content Include="Resources\Characters\Character_Martial Artist_Male_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Female_Green.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Female_Grey.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Female_Orange.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Female_Purple.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Female_Red.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Female_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Male_Green.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Male_Grey.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Male_Organge.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Male_Purple.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Male_Red.png" />
+    <Content Include="Resources\Characters\Character_Thaumaturge_Male_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Thief_Female_Green.png" />
+    <Content Include="Resources\Characters\Character_Thief_Female_Grey.png" />
+    <Content Include="Resources\Characters\Character_Thief_Female_Orange.png" />
+    <Content Include="Resources\Characters\Character_Thief_Female_Purple.png" />
+    <Content Include="Resources\Characters\Character_Thief_Female_Red.png" />
+    <Content Include="Resources\Characters\Character_Thief_Female_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Thief_Male_Green.png" />
+    <Content Include="Resources\Characters\Character_Thief_Male_Grey.png" />
+    <Content Include="Resources\Characters\Character_Thief_Male_Orange.png" />
+    <Content Include="Resources\Characters\Character_Thief_Male_Purple.png" />
+    <Content Include="Resources\Characters\Character_Thief_Male_Red.png" />
+    <Content Include="Resources\Characters\Character_Thief_Male_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Female_Green.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Female_Grey.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Female_Orange.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Female_Purple.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Female_Red.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Female_Yellow.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Male_Green.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Male_Grey.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Male_Orange.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Male_Purple.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Male_Red.png" />
+    <Content Include="Resources\Characters\Character_Wizard_Male_Yellow.png" />
+    <None Include="Resources\Objects\Object_Bush Tree.png" />
+    <None Include="Resources\Objects\Object_Red Berries.png" />
+    <None Include="Resources\Doors\Door_Temple Closed Horizontal.png" />
+    <None Include="Resources\Doors\Door_Town Open Vertical.png" />
+    <None Include="Resources\Doors\Door_Temple Closed Vertical.png" />
+    <None Include="Resources\Doors\Door_Temple Knob Vertical.png" />
+    <None Include="Resources\Doors\Door_Temple Frame Horizontal.png" />
+    <None Include="Resources\Doors\Door_Temple Frame Vertical.png" />
+    <None Include="Resources\Doors\Door_Temple Knob Horizontal.png" />
+    <None Include="Resources\Doors\Door_Temple Open Horizontal.png" />
+    <None Include="Resources\Doors\Door_Temple Open Vertical.png" />
+    <None Include="Resources\Doors\Door_Town Closed Horizontal.png" />
+    <None Include="Resources\Doors\Door_Town Closed Vertical.png" />
+    <None Include="Resources\Doors\Door_Town Frame Horizontal.png" />
+    <None Include="Resources\Doors\Door_Town Frame Vertical.png" />
+    <None Include="Resources\Doors\Door_Town Knob Horizontal.png" />
+    <None Include="Resources\Doors\Door_Town Knob Vertical.png" />
+    <None Include="Resources\Doors\Door_Town Open Horizontal.png" />
+    <Content Include="Resources\NPCs\NPC_Sheriff.png" />
+    <Content Include="Resources\UnpassableObjects\UnpassableObject_Granite Altar Counter.png" />
+    <None Include="Resources\UnpassableObjects\UnpassableObject_Counter Vertical.png" />
+    <None Include="Resources\UnpassableObjects\UnpassableObject_Counter Horizontal.png" />
+    <None Include="Resources\Objects\Object_Price List Scroll Vertical.png" />
+    <None Include="Resources\Objects\Object_Price List Scroll Horizontal.png" />
+    <None Include="Resources\Objects\Object_Mirror Vertical.png" />
+    <None Include="Resources\Objects\Object_Mirror Horizontal.png" />
+    <None Include="Resources\Objects\Object_Wizardry WallOverlay Horizontal.png" />
+    <None Include="Resources\Objects\Object_Tailor shop litter.png" />
+    <None Include="Resources\Objects\Object_Wizardry WallOverlay Vertical.png" />
+    <None Include="Resources\Objects\Object_Small Tree.png" />
+    <None Include="Resources\Terrains\Terrain_Sand Floor.png" />
+    <None Include="Resources\UnpassableObjects\UnpassableObject_Fountain Pool.png" />
+    <None Include="Resources\Objects\Object_Large Tree.png" />
+    <None Include="Resources\UnpassableObjects\UnpassableObject_Fountain Center Piece.png" />
+    <None Include="Resources\Objects\Object_Barrel.png" />
+    <None Include="Resources\UnpassableObjects\UnpassableObject_Altar Counter.png" />
+    <None Include="Resources\Walls\Wall_Town Horz.png" />
+    <None Include="Resources\Walls\Wall_Temple Vert.png" />
+    <None Include="Resources\Walls\Wall_Town Vert.png" />
+    <None Include="Resources\Walls\Wall_Temple Horz.png" />
+    <None Include="Resources\Terrains\Terrain_Forest Floor.png" />
+    <None Include="Resources\Terrains\Terrain_Temple Floor.png" />
+    <None Include="Resources\Terrains\Terrain_Beaten Path Floor.png" />
+    <None Include="Resources\Terrains\Terrain_Water Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\NonPlayerCharacters\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

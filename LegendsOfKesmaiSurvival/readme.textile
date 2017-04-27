@@ -1,0 +1,82 @@
+Information about textile markup - http://bit.ly/textile-basics
+
+Getting Started For Developers:
+If you are reading this file, you have done one of two things, or maybe a third that I just haven't thought of.
+
+If you have downloaded this file because it says readme and figured it would help you get started, well you thought right.
+
+If you have already downloaded the entire solution and now are reading this file because you aren't sure how Assembla or Subversion works, or how to get everything building and running,
+well you are still in the right place.
+
+Things you will need:
+You will need a full version of Visual Studio 2010 to be able to build and run the project.  
+Unfortunately you will not be able to use the free express edition to do any work on the project.
+
+If anyone has any information on how people can get their hands on VS 2010 for a reasonable price, please share (update this file).
+
+The second thing you will want is a subversion plugin for Visual Studio so that you can do source control commands from within the project.
+I have been using AnkhSVN from here http://ankhsvn.open.collab.net/.
+Once you have that installed, you will need to tell Visual Studio to use it (or your plugin of choice) as your source control plugin.
+You can do this from Tools->Options->Source Control->Plugin Selection.
+
+So, now you have Visual Studio, and you have a plugin that can connect to Assembla to download and commit project changes etc.
+
+Now we need to connect everything together so that you can easily get latest or commit changes from within Visual Studio.
+
+The best way to do this is to open the project from subversion.
+To do this go to File->Subversion->Open From Subversion.
+Note:This will only be available if you have changed the source control plugin selection mentioned above.
+
+On the dialog that opens up, there should be a place to add or enter a repository Url.
+Use this - https://subversion.assembla.com/svn/legendsofkesmaisurvival/
+You can get this Url anytime from the Assembla project page.
+If you have problems adding the Url,  you may need to check your settings for your source control plugin.  
+Specifically you may need to edit the proxy settings if you are trying to do this from your office.
+You can get to these settings from Tools->Options->Source Control.
+
+Once you have entered the Url you should see the trunk folder hopefully.  Opening that folder should get you to the solution (.sln).
+
+Once you click open, your plugin should let you select the local folder to download the solution to.  
+Click Ok and you should be getting the latest and everything will be bound, yay!
+
+
+Now that you have done all of that, you should be able to build the project as is.  If you do get build errors, your best bet is going to be to email Mike at mike.e.coffey@gmail.com.
+Someone may have commited bad code or there may be something missing from the solution (hopefully not).
+
+If you did get it to build, you probably want to go ahead and edit the solution's startup projects.
+Right click the solution and select Properties.  On the properties dialog select the Startup Project node.
+There is an option to start multiple projects when debugging.  You want to start the Console Server and the WinFormsClient.
+
+
+Now you need to create a Microsoft Sql Server database for the server to use.
+You can use Sql Server Express for this, any version should do.
+
+You can name the database anything you want, but I used LegendsOfKesmaiSurvival.
+
+Once you have the database created, you will need to run the Database.sql script on it found in the database solution folder.  This should create the tables the server needs.
+
+
+Now you need to change a connection string in the services code so that the services can connect to your database.
+I plan on making this configurable so that when someone gets latest they don't have to edit this from someone changing it for their environment.
+Anyway, look for the Global.cs file in the LegendsOfKesmaiSurvival.Services project under the Utility folder.
+
+In the Properties region, there is a connection string there that you will need to modify so that it points to your database.
+
+
+So, all of that should make it so that you should be able to hit F5 and get the console server and client up and running.
+
+The only thing you need to do with the client is use the Options button to edit the server url to point to your server.
+
+The port numbers are not yet configurable, so you will need to use port 5200 in the server uri.
+
+This is probably what you want yours to look like:
+net.tcp://localhost:5200/LegendsOfKesmaiSurvival
+
+
+Finally you can create a new user account from the login screen and then login!
+
+
+
+
+
+

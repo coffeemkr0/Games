@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="LegendsOfKesmaiSurvival.Services.Zombies" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="LegendsOfKesmaiSurvival.Services.Zombies" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="LegendsOfKesmaiSurvival.Services.Zombies/Imports">
+      <xsd:import namespace="LegendsOfKesmaiSurvival.Services.Zombies" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LegendsOfKesmaiSurvival.Core.GameStateInformation" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGameplay_Join_InputMessage">
+    <wsdl:part name="parameters" element="tns:Join" />
+  </wsdl:message>
+  <wsdl:message name="IGameplay_SendChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendChat" />
+  </wsdl:message>
+  <wsdl:message name="IGameplay_ChatReceivedCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ChatReceivedCallback" />
+  </wsdl:message>
+  <wsdl:message name="IGameplay_GameStateUpdatedCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GameStateUpdatedCallback" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_StartGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartGame" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_StartGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministration_Callback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Callback" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IGameplay">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Join">
+      <wsdl:input wsaw:Action="LegendsOfKesmaiSurvival.Services.Zombies/IGameplay/Join" message="tns:IGameplay_Join_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="SendChat">
+      <wsdl:input wsaw:Action="LegendsOfKesmaiSurvival.Services.Zombies/IGameplay/SendChat" message="tns:IGameplay_SendChat_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ChatReceivedCallback">
+      <wsdl:output wsaw:Action="LegendsOfKesmaiSurvival.Services.Zombies/IGameplay/ChatReceivedCallback" message="tns:IGameplay_ChatReceivedCallback_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GameStateUpdatedCallback">
+      <wsdl:output wsaw:Action="LegendsOfKesmaiSurvival.Services.Zombies/IGameplay/GameStateUpdatedCallback" message="tns:IGameplay_GameStateUpdatedCallback_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="true" name="IAdministration">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="StartGame">
+      <wsdl:input wsaw:Action="LegendsOfKesmaiSurvival.Services.Zombies/IAdministration/StartGame" message="tns:IAdministration_StartGame_InputMessage" />
+      <wsdl:output wsaw:Action="LegendsOfKesmaiSurvival.Services.Zombies/IAdministration/StartGameResponse" message="tns:IAdministration_StartGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Callback">
+      <wsdl:output wsaw:Action="LegendsOfKesmaiSurvival.Services.Zombies/IAdministration/Callback" message="tns:IAdministration_Callback_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
